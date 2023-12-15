@@ -1,0 +1,3 @@
+# Simple Stock Quote Service 
+
+This is the Ballerina implementation (REST) of the [Simple Stock Quote Service](https://github.com/wso2/micro-integrator/tree/master/integration/samples/axis2Server/src/SimpleStockQuoteService).
