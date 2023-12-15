@@ -1,0 +1,3 @@
+# Fast Stock Quote Service
+
+This service return a fixed value for a stock quote. Which will be used to perform a load test.
