@@ -13,3 +13,5 @@ curl http://localhost:8080/HelloService/greet/John
 ```
 
 In both cases, replace localhost with the IP address or hostname of the machine where your Ballerina service is running if it's not on your local machine. Also, replace `8080` with the port number your service is listening on if it's different.
+
+This is the Ballerina implementation (REST) of the [HelloWorld](https://github.com/wso2/micro-integrator/tree/master/integration/samples/axis2Server/src/HelloWorld).
