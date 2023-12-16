@@ -1,0 +1,184 @@
+openapi: 3.0.1
+info:
+  title: Stocks
+  version: 0.1.0
+servers:
+- url: "{server}:{port}/stocks"
+  variables:
+    server:
+      default: http://localhost
+    port:
+      default: port
+paths:
+  /quote/{symbol}:
+    get:
+      operationId: getQuoteSymbol
+      parameters:
+      - name: symbol
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          description: Ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Quote'
+        "404":
+          description: NotFound
+  /fullQuote/{symbol}:
+    get:
+      operationId: getFullquoteSymbol
+      parameters:
+      - name: symbol
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          description: Ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FullQuote'
+  /market-activity:
+    post:
+      operationId: postMarketActivity
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MarketActivityRequest'
+      responses:
+        "201":
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MarketActivityResponse'
+  /order:
+    put:
+      operationId: putOrder
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PlaceOrderRequest'
+      responses:
+        "202":
+          description: Accepted
+components:
+  schemas:
+    Quote:
+      required:
+      - change
+      - earnings
+      - high
+      - last
+      - lastTradeTimestamp
+      - low
+      - marketCap
+      - name
+      - open
+      - peRatio
+      - percentageChange
+      - prevClose
+      - symbol
+      - volume
+      type: object
+      properties:
+        symbol:
+          type: string
+        last:
+          type: number
+          format: double
+        lastTradeTimestamp:
+          type: string
+        change:
+          type: number
+          format: double
+        open:
+          type: number
+          format: double
+        high:
+          type: number
+          format: double
+        low:
+          type: number
+          format: double
+        volume:
+          type: integer
+          format: int64
+        marketCap:
+          type: number
+          format: double
+        prevClose:
+          type: number
+          format: double
+        percentageChange:
+          type: number
+          format: double
+        earnings:
+          type: number
+          format: double
+        peRatio:
+          type: number
+          format: double
+        name:
+          type: string
+    MarketActivityResponse:
+      required:
+      - quotes
+      type: object
+      properties:
+        quotes:
+          type: array
+          items:
+            $ref: '#/components/schemas/Quote'
+    TradingDay:
+      required:
+      - day
+      - quote
+      type: object
+      properties:
+        day:
+          type: integer
+          format: int64
+        quote:
+          $ref: '#/components/schemas/Quote'
+    FullQuote:
+      required:
+      - tradeHistory
+      type: object
+      properties:
+        tradeHistory:
+          type: array
+          items:
+            $ref: '#/components/schemas/TradingDay'
+    MarketActivityRequest:
+      required:
+      - symbols
+      type: object
+      properties:
+        symbols:
+          type: array
+          items:
+            type: string
+    PlaceOrderRequest:
+      required:
+      - price
+      - quantity
+      - symbol
+      type: object
+      properties:
+        symbol:
+          type: string
+        price:
+          type: number
+          format: double
+        quantity:
+          type: integer
+          format: int64
