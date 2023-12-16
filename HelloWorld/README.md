@@ -1,3 +1,5 @@
+# Hello World REST Service
+
 You can use curl command-line tool to create HTTP requests for your Ballerina service. Here are the examples:
 
 1. To access the greet resource which doesn't require any parameters, you can use the following command:
