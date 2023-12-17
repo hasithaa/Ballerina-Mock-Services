@@ -4,7 +4,6 @@ description : "The famous Stock Quote Service"
 tags : ["REST Services"]
 date: 2023-12-15
 series: ["REST Services"]
-categories: [Examples]
 series_weight: 2
 ---
 
