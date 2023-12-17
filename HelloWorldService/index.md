@@ -3,7 +3,7 @@ title : "Hello World Rest Service"
 description : "This sample demonstrates how to create a simple REST service using Ballerina."
 tags : ["Hello World", "REST services"]
 date: 2023-12-14
-series: ["REST Services"]
+series: ["REST Services", "HelloWorld"]
 categories: [Examples]
 series_weight: 1
 ---
