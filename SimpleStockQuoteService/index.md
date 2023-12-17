@@ -1,7 +1,7 @@
 ---
 title : "Stock Quote Rest Service"
 description : "The famous Stock Quote Service"
-tags : ["rest service"]
+tags : ["REST Services"]
 date: 2023-12-15
 series: ["REST Services"]
 categories: [Examples]
