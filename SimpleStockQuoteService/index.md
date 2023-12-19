@@ -7,6 +7,10 @@ series: ["REST Services"]
 series_weight: 2
 ---
 
+This sample demonstrates how to create the famous Stock Quote Service using Ballerina.
+
+<!--more-->
+
 {{< example output=false test=true repo="https://github.com/hasithaa/Ballerina-Mock-Services/" repoPath="SimpleStockQuoteService" hr="down" default="service.bal" >}}
 
 ## Overview

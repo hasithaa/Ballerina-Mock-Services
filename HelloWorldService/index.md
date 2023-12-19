@@ -7,6 +7,10 @@ series: ["REST Services", "HelloWorld"]
 series_weight: 1
 ---
 
+This sample demonstrates how to create a simple REST service using Ballerina.
+
+<!--more-->
+
 {{< example output=false test=true repo="https://github.com/hasithaa/Ballerina-Mock-Services/" repoPath="HelloWorld" hr="down"  >}}
 
 ## Overview
